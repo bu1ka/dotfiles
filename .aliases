@@ -142,3 +142,9 @@ alias reload="exec $SHELL -l"
 
 #vargant alias
 alias vt="vagrant "
+
+#fix git conflict
+alias fix="git diff --name-only | uniq | xargs $EDITOR"
+
+# copy name of current git branch to clipboard
+alias gbr="print_git_branch_name | pbcopy"
