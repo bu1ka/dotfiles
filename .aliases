@@ -148,3 +148,6 @@ alias fix="git diff --name-only | uniq | xargs $EDITOR"
 
 # copy name of current git branch to clipboard
 alias gbr="print_git_branch_name | pbcopy"
+
+# open current task in browser
+alias task="open https://repo-url/$(git symbolic-ref --quiet --short HEAD | grep -o "\w\{2\}-\d\{1,8\}")"
