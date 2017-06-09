@@ -244,3 +244,20 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+#### grep git branch and checkout to that
+function gco() {
+	if [ -z "${1}" ]; then
+		echo "ERROR: No branch to checkout.";
+		return 1;
+	fi;
+
+	local finded_branch=$(git br | grep ${1})
+
+	if [ -z ${finded_branch} ]; then
+		echo "ERROR: There is no branch ${1}";
+		return 1;
+	fi;
+
+	git co $(echo $finded_branch)
+}
