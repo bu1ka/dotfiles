@@ -61,4 +61,4 @@
 --type-add=css=less
 --type-set=markdown=.md,.mkd,.markdown
 
---type-add=js=.jsx
+--type-add=js=.jsx,.es6
